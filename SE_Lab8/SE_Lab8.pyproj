@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>841f843a-4f74-4abb-af8f-cc6f2eb7e9af</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>SE_Lab8_1.2.py</StartupFile>
+    <StartupFile>SE_Lab8_4.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,6 +23,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="SE_Lab8_1.2.py" />
+    <Compile Include="SE_Lab8_2.py" />
+    <Compile Include="SE_Lab8_3.py" />
+    <Compile Include="SE_Lab8_4.py" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
 </Project>
