@@ -5,7 +5,7 @@ import sys
 from PySide.QtGui import *
 from PySide.QtCore import *
 
-'''
+''' No.1
 class Simple_drawing_window(QWidget):
 	def __init__ (self):
 		QWidget.__init__(self, None)
@@ -73,6 +73,7 @@ class Simple_drawing_window3(QWidget):
         p.end()
 '''
 
+''' No. 2
 class Self_simple_drawing(QWidget):
     def __init__(self):
         QWidget.__init__(self)
@@ -131,6 +132,7 @@ class Simple_paint(QWidget):
 
     def clearActions(self):
         self.program.clearScreen()
+'''
 
 def main():
     app = QApplication(sys.argv);
