@@ -1,9 +1,11 @@
 #https://github.com/Hausaufgaben/GitHubVS2013.git
+#https://github.com/SmAaMyA/GitHubVS2013---test
 
 import sys
 from PySide.QtGui import *
 from PySide.QtCore import *
 
+'''
 class Simple_drawing_window(QWidget):
 	def __init__ (self):
 		QWidget.__init__(self, None)
@@ -69,7 +71,7 @@ class Simple_drawing_window3(QWidget):
         p.setBrush(QColor(0, 0, 128))
         p.drawPolygon([QPoint(200, 50), QPoint(200, 250), QPoint(600, 250), QPoint(450,50)])
         p.end()
-
+'''
 def main():
     app = QApplication(sys.argv);
 
