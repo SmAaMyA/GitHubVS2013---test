@@ -1,5 +1,5 @@
 #https://github.com/Hausaufgaben/GitHubVS2013.git
-#https://github.com/SmAaMyA/GitHubVS2013---test
+#https://github.com/SmAaMyA/GitHubVS2013---test.git
 
 import sys
 from PySide.QtGui import *
