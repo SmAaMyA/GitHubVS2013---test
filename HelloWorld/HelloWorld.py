@@ -56,10 +56,24 @@ class Simple_drawing_window2(QWidget):
 
         p.end()
 
+class Simple_drawing_window3(QWidget):
+    def __init__(self):
+        QWidget.__init__(self, None)
+        self.setWindowTitle("Simple Drawing 3")
+    
+    def paintEvent(self, e):
+        p = QPainter()
+        p.begin(self)
+
+        p.setPen(QColor(0, 0, 0))
+        p.setBrush(QColor(0, 0, 128))
+        p.drawPolygon([QPoint(200, 50), QPoint(200, 250), QPoint(600, 250), QPoint(450,50)])
+        p.end()
+
 def main():
     app = QApplication(sys.argv);
 
-    w = Simple_drawing_window2()
+    w = Simple_drawing_window3()
     w.show()
 
     return app.exec_()
