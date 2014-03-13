@@ -73,10 +73,69 @@ class Simple_drawing_window3(QWidget):
         p.end()
 '''
 
+class Self_simple_drawing(QWidget):
+    def __init__(self):
+        QWidget.__init__(self)
+        self.setFixedSize(500, 500)
+
+        self.stage = QImage(QSize(500, 500), QImage.Format_RGB32)
+        self.stage.fill(QColor(255, 255, 255))
+        self.beginPoint = QPoint()
+
+    def paintEvent(self, event):
+        p = QPainter(self)
+        p.drawImage(event.rect(), self.stage)
+    
+    def mousePressEvent(self, event):
+        if event.button() == Qt.LeftButton:
+            self.beginPoint = event.pos()
+            self.pressed = True
+
+    def mouseMoveEvent(self, event):
+        if event.buttons() == Qt.LeftButton and self.pressed:
+            self.drawing(event.pos())
+
+    def mouseReleaseEvent(self, event):
+        if event.button() == Qt.LeftButton and self.pressed:
+            self.drawing(event.pos())
+            self.pressed = False
+
+    def drawing(self, endPoint):
+        p = QPainter(self.stage)
+        p.setPen(QPen(QColor(0, 0, 0), 5))
+        p.drawLine(self.beginPoint, endPoint)
+
+        self.update()
+        self.beginPoint = QPoint(endPoint)
+
+    def clearScreen(self):
+        self.stage.fill(QColor(255, 255, 255))
+        self.update()
+
+class Simple_paint(QWidget):
+    def __init__ (self):
+        QWidget.__init__(self)
+        self.setWindowTitle("Self Simple Drawing")
+        #self.setFixedSize(500,550)
+        
+        self.program = Self_simple_drawing()
+        clearButton = QPushButton("Clear")
+        clearButton.clicked.connect(self.clearActions)
+        label = QLabel("<p align=\"center\">Drag the mouse to draw</p>")
+
+        layout = QVBoxLayout()
+        layout.addWidget(self.program)
+        layout.addWidget(label)
+        layout.addWidget(clearButton)
+        self.setLayout(layout)
+
+    def clearActions(self):
+        self.program.clearScreen()
+
 def main():
     app = QApplication(sys.argv);
 
-    w = Simple_drawing_window3()
+    w = Simple_paint()
     w.show()
 
     return app.exec_()
