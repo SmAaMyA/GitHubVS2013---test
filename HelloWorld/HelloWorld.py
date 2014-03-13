@@ -72,6 +72,7 @@ class Simple_drawing_window3(QWidget):
         p.drawPolygon([QPoint(200, 50), QPoint(200, 250), QPoint(600, 250), QPoint(450,50)])
         p.end()
 '''
+
 def main():
     app = QApplication(sys.argv);
 
